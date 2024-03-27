@@ -11,20 +11,21 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
-            //Sum sa = new Sum();
-            //sa.TwoSum(new[] { 2,7,11,15},9);
+            PL1 sa = new PL1();
+            sa.TwoSum(new[] { 0, 4, 3, 0 },0);
+            Console.ReadKey();
 
-            Add_2_num addnum = new Add_2_num();
-            ListNode l13 = new ListNode(9, null);
-            ListNode l12 = new ListNode(4, l13);
-            ListNode l11 = new ListNode(2, l12);
+            //Add_2_num addnum = new Add_2_num();
+            //ListNode l13 = new ListNode(9, null);
+            //ListNode l12 = new ListNode(4, l13);
+            //ListNode l11 = new ListNode(2, l12);
 
-            ListNode l24 = new ListNode(9, null);
-            ListNode l23 = new ListNode(4, l24);
-            ListNode l22 = new ListNode(6, l23);
-            ListNode l21 = new ListNode(5, l22);
+            //ListNode l24 = new ListNode(9, null);
+            //ListNode l23 = new ListNode(4, l24);
+            //ListNode l22 = new ListNode(6, l23);
+            //ListNode l21 = new ListNode(5, l22);
 
-            addnum.AddTwoNumbers(l11, l21);
+            //addnum.AddTwoNumbers(l11, l21);
         }
     }
     internal class Sum
