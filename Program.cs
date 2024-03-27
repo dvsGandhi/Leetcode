@@ -11,9 +11,9 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
-            PL1 sa = new PL1();
-            sa.TwoSum(new[] { 0, 4, 3, 0 },0);
-            Console.ReadKey();
+            //PL1 sa = new PL1();
+            //sa.TwoSum(new[] { 0, 4, 3, 0 },0);
+            //Console.ReadKey();
 
             //Add_2_num addnum = new Add_2_num();
             //ListNode l13 = new ListNode(9, null);
@@ -26,6 +26,14 @@ namespace Leetcode
             //ListNode l21 = new ListNode(5, l22);
 
             //addnum.AddTwoNumbers(l11, l21);
+
+            PL4 pL4 = new PL4();
+            int[] num1 = { };
+            int[] num2 = { 4 };
+            Console.WriteLine(pL4.FindMedianSortedArrays(num1, num2));
+
+
+            Console.ReadLine();
         }
     }
     internal class Sum
