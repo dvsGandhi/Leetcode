@@ -11,10 +11,13 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
+            #region PL1
             //PL1 sa = new PL1();
             //sa.TwoSum(new[] { 0, 4, 3, 0 },0);
             //Console.ReadKey();
+            #endregion
 
+            #region PL2
             //Add_2_num addnum = new Add_2_num();
             //ListNode l13 = new ListNode(9, null);
             //ListNode l12 = new ListNode(4, l13);
@@ -26,12 +29,19 @@ namespace Leetcode
             //ListNode l21 = new ListNode(5, l22);
 
             //addnum.AddTwoNumbers(l11, l21);
+            #endregion
 
-            PL4 pL4 = new PL4();
-            int[] num1 = { };
-            int[] num2 = { 4 };
-            Console.WriteLine(pL4.FindMedianSortedArrays(num1, num2));
+            #region PL4
+            //PL4 pL4 = new PL4();
+            //int[] num1 = { };
+            //int[] num2 = { 4 };
+            //Console.WriteLine(pL4.FindMedianSortedArrays(num1, num2));
+            #endregion
 
+            #region PL5
+            PL5 pl5 = new PL5();
+            Console.WriteLine(pl5.LongestPalindrome("babad"));
+            #endregion
 
             Console.ReadLine();
         }
