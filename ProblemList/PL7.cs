@@ -34,7 +34,7 @@ namespace Leetcode.ProblemList
             string s = new string(str);
             try
             {
-                return Convert.ToInt32(new string(str))
+                return Convert.ToInt32(new string(str));
             }
             catch (Exception ex)
             {
