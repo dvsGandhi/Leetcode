@@ -49,8 +49,13 @@ namespace Leetcode
             #endregion
 
             #region PL8
-            PL8 pL8 = new PL8();
-            Console.Write(pL8.MyAtoi("   -321 random string"));
+            //PL8 pL8 = new PL8();
+            //Console.Write(pL8.MyAtoi("   -321 random string"));
+            #endregion
+
+            #region PL10
+            PL10 pL10 = new PL10();
+            Console.WriteLine(pL10.IsMatch("aa", "a*"));
             #endregion
 
             Console.ReadLine();
