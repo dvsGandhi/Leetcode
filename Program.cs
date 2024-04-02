@@ -39,8 +39,13 @@ namespace Leetcode
             #endregion
 
             #region PL5
-            PL5 pl5 = new PL5();
-            Console.WriteLine(pl5.LongestPalindrome("babad"));
+            //PL5 pl5 = new PL5();
+            //Console.WriteLine(pl5.LongestPalindrome("babad"));
+            #endregion
+
+            #region PL7
+            PL7 pL7 = new PL7();
+            Console.WriteLine(pL7.Reverse(1534236469));
             #endregion
 
             Console.ReadLine();
