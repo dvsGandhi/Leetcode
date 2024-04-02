@@ -44,8 +44,13 @@ namespace Leetcode
             #endregion
 
             #region PL7
-            PL7 pL7 = new PL7();
-            Console.WriteLine(pL7.Reverse(1534236469));
+            //PL7 pL7 = new PL7();
+            //Console.WriteLine(pL7.Reverse(1534236469));
+            #endregion
+
+            #region PL8
+            PL8 pL8 = new PL8();
+            Console.Write(pL8.MyAtoi("   -321 random string"));
             #endregion
 
             Console.ReadLine();
