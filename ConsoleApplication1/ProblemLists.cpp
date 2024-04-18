@@ -22,3 +22,28 @@ int ProblemLists::maxArea(vector<int>& vHeight)
 	return maxwater;
 }
 #pragma endregion
+
+#pragma region 14. Longest Common Prefix
+string ProblemLists::longestCommonPrefix(vector<string>& strs)
+{
+    if(strs.empty())
+        return "";
+
+    string prefix = strs[0];
+    for (int elementNo = 1;elementNo < strs.size();elementNo++)
+    {
+        prefix = longestCommonPrefix(prefix, strs[elementNo]);
+    }
+    return prefix;
+}
+
+string ProblemLists::longestCommonPrefix(string str1, string str2) 
+{
+    int i = 0;
+    while (i < str1.size() && i < str2.size() && str1[i] == str2[i]) {
+        i++;
+    }
+    return str1.substr(0, i);
+}
+#pragma endregion
+

@@ -10,8 +10,11 @@ int main()
     /*test test;
     test.PrintHello();*/
     ProblemLists PL;
-    vector<int> input = { 1,8,6,2,5,4,8,3,7 };
-    cout << PL.maxArea(input) <<"\n";
+    /*vector<int> input = { 1,8,6,2,5,4,8,3,7 };
+    cout << PL.maxArea(input) <<"\n";*/
+
+    vector<string> input = { "flower","flow","flight" };
+    cout << PL.longestCommonPrefix(input) << "\n";
     
 }
 
