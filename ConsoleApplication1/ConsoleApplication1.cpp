@@ -10,17 +10,28 @@ int main()
     /*test test;
     test.PrintHello();*/
     ProblemLists PL;
+
+    #pragma region PL14
     /*vector<int> input = { 1,8,6,2,5,4,8,3,7 };
     cout << PL.maxArea(input) <<"\n";*/
+    #pragma endregion
 
+    #pragma region 14
     /*vector<string> input = { "flower","flow","flight" };
     cout << PL.longestCommonPrefix(input) << "\n";*/
+    #pragma endregion
 
-#pragma region PL15
-    vector<int> nums = { -1,0,1,2,-1,-4 };
-    cout<<PL.threeSum(nums);
-    cout << "hello";
-#pragma endregion
+    #pragma region PL15
+    /*vector<int> nums = { -1,0,1,2,-1,-4 };
+    cout<<PL.threeSum(nums);*/
+    #pragma endregion
+
+    #pragma region 16
+    vector<int> nums = { 1,1,1,1 };
+    int target = 0;
+    cout << PL.threeSumClosest(nums, target);
+    #pragma endregion
+
 
     
 }

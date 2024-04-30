@@ -51,7 +51,7 @@ string ProblemLists::longestCommonPrefix(string str1, string str2)
 }
 #pragma endregion
 
-#pragma region PL15
+#pragma region 15. 3Sum
 /// <summary>
 /// Input: nums = [-1,0,1,2,-1,-4]
 ///Output : [[-1, -1, 2], [-1, 0, 1]]
@@ -93,5 +93,18 @@ vector<vector<int>> ProblemLists::threeSum(vector<int>& nums)
         output.emplace_back(triplet);
     }
     return output;
+}
+#pragma endregion
+
+#pragma region 16. 3Sum Closest
+int ProblemLists::threeSumClosest(vector<int>& nums, int target) {
+    int sum = 0;
+    for (int i = target==0?1:0;i <nums.size();i++)
+    {
+        sum += nums[i];
+        if (nums[i] == target)
+            break;
+    }
+    return sum;
 }
 #pragma endregion
