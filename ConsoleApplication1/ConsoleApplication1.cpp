@@ -13,8 +13,15 @@ int main()
     /*vector<int> input = { 1,8,6,2,5,4,8,3,7 };
     cout << PL.maxArea(input) <<"\n";*/
 
-    vector<string> input = { "flower","flow","flight" };
-    cout << PL.longestCommonPrefix(input) << "\n";
+    /*vector<string> input = { "flower","flow","flight" };
+    cout << PL.longestCommonPrefix(input) << "\n";*/
+
+#pragma region PL15
+    vector<int> nums = { -1,0,1,2,-1,-4 };
+    cout<<PL.threeSum(nums);
+    cout << "hello";
+#pragma endregion
+
     
 }
 
