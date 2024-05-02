@@ -14,6 +14,15 @@ public:
 	int threeSumClosest(vector<int>& nums, int target);
 	vector<string> letterCombinations(string digits);
 
+	struct ListNode {
+		int val;
+		ListNode* next;
+		ListNode() : val(0), next(nullptr) {}
+		ListNode(int x) : val(x), next(nullptr) {}
+		ListNode(int x, ListNode* next) : val(x), next(next) {}
+	};
+	ListNode* removeNthFromEnd(ListNode* head, int n);
+
 private:
 	string longestCommonPrefix(string str1, string str2);
 	unordered_map<char, string> M = {

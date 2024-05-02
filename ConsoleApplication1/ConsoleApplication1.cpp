@@ -32,8 +32,17 @@ int main()
     cout << PL.threeSumClosest(nums, target);*/
     #pragma endregion
 
-#pragma region PL17
-    PL.letterCombinations("234");
+    #pragma region PL17
+    //PL.letterCombinations("234");
+#pragma endregion
+    
+#pragma region pL19
+    ProblemLists::ListNode N5(5);
+    ProblemLists::ListNode N4(4,&N5);
+    ProblemLists::ListNode N3(3,&N4);
+    ProblemLists::ListNode N2(2,&N3);
+    ProblemLists::ListNode N1(1,&N2);
+    PL.removeNthFromEnd(&N1, 2);
 #pragma endregion
 
     

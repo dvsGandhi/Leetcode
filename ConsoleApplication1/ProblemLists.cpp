@@ -5,7 +5,6 @@
 #include <string>
 #include <functional>
 //#include "Extra.cpp"
-using namespace std;
 #pragma region 11. Container With Most Water
 int ProblemLists::maxArea(vector<int>& vHeight)
 {
@@ -134,3 +133,28 @@ vector<string> ProblemLists::letterCombinations(string digits) {
 	return output;
 }
 #pragma endregion
+
+#pragma region 19. Remove Nth Node From End of List
+ProblemLists::ListNode* ProblemLists::removeNthFromEnd(ListNode* head, int n) {
+	ListNode* dummy = new ListNode(0);
+	dummy->next = head;
+	ListNode* first = dummy;
+	ListNode* second = dummy;
+
+	for (int i = 0; i <= n; ++i) {
+		first = first->next;
+	}
+
+	while (first != nullptr) {
+		first = first->next;
+		second = second->next;
+	}
+
+	ListNode* temp = second->next;
+	second->next = second->next->next;
+	delete temp;
+
+	return dummy->next;
+}
+#pragma endregion
+
