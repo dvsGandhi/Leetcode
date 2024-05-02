@@ -23,6 +23,8 @@ public:
 	};
 	ListNode* removeNthFromEnd(ListNode* head, int n);
 
+	bool isValid(string s);
+
 private:
 	string longestCommonPrefix(string str1, string str2);
 	unordered_map<char, string> M = {

@@ -4,6 +4,7 @@
 #include <set>
 #include <string>
 #include <functional>
+#include<stack>
 //#include "Extra.cpp"
 #pragma region 11. Container With Most Water
 int ProblemLists::maxArea(vector<int>& vHeight)
@@ -120,7 +121,7 @@ vector<string> ProblemLists::letterCombinations(string digits) {
 
 	function<void(int, string)> backtrack = [&](int index, string path) {
 		if (index == digits.size()) {
-			cout << path<<",";
+			cout << path << ",";
 			output.push_back(path);
 			return;
 		}
@@ -157,4 +158,32 @@ ProblemLists::ListNode* ProblemLists::removeNthFromEnd(ListNode* head, int n) {
 	return dummy->next;
 }
 #pragma endregion
+
+#pragma region 20. Valid Parentheses
+bool ProblemLists::isValid(string s)
+{
+	if(s.size()<1)
+		return false;
+	unordered_map<char, char> mapping = { {'(',')'},{'{','}'},{'[',']'} };
+	stack<char> stack;
+
+	for (char bracket : s)
+	{
+		if (mapping.find(bracket) != mapping.end())
+		{
+			stack.push(bracket);
+		}
+		else
+		{
+			if (stack.empty() || mapping[stack.top()] != bracket)
+			{
+				return false;
+			}
+			stack.pop();
+		}
+	}
+	return stack.empty();
+}
+#pragma endregion
+
 
