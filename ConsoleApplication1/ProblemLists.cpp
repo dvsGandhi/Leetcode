@@ -120,7 +120,7 @@ vector<string> ProblemLists::letterCombinations(string digits) {
 
 	function<void(int, string)> backtrack = [&](int index, string path) {
 		if (index == digits.size()) {
-			cout << path<<",";
+			cout << path << ",";
 			output.push_back(path);
 			return;
 		}
@@ -157,4 +157,26 @@ ProblemLists::ListNode* ProblemLists::removeNthFromEnd(ListNode* head, int n) {
 	return dummy->next;
 }
 #pragma endregion
+
+#pragma region 20. Valid Parentheses
+bool ProblemLists::isValid(string s)
+{
+	if(s.size()<1)
+		return false;
+	unordered_map<char, char> mapping = { {'(',')'},{'{','}'},{'[',']'} };
+
+	for (int i = 0;i < s.size() - 1;i = i + 2)
+	{
+		auto key = mapping.find(s[i]);
+		char value = mapping.find(s[i])->second;
+		char comparevalue = s[i + 1];
+		if (value != comparevalue)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+#pragma endregion
+
 

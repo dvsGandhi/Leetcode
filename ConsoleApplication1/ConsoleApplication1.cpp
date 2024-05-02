@@ -34,15 +34,19 @@ int main()
 
     #pragma region PL17
     //PL.letterCombinations("234");
-#pragma endregion
+    #pragma endregion
     
-#pragma region pL19
-    ProblemLists::ListNode N5(5);
+    #pragma region pL19
+    /*ProblemLists::ListNode N5(5);
     ProblemLists::ListNode N4(4,&N5);
     ProblemLists::ListNode N3(3,&N4);
     ProblemLists::ListNode N2(2,&N3);
     ProblemLists::ListNode N1(1,&N2);
-    PL.removeNthFromEnd(&N1, 2);
+    PL.removeNthFromEnd(&N1, 2);*/
+#pragma endregion
+
+#pragma region PL20
+    PL.isValid("()");
 #pragma endregion
 
     
