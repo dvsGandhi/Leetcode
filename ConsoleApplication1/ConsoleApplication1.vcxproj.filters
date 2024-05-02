@@ -24,6 +24,9 @@
     <ClCompile Include="ProblemLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Extra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h">

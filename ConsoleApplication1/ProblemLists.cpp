@@ -2,6 +2,9 @@
 #include <algorithm>
 #include <iostream>
 #include <set>
+#include <string>
+#include <functional>
+//#include "Extra.cpp"
 using namespace std;
 #pragma region 11. Container With Most Water
 int ProblemLists::maxArea(vector<int>& vHeight)
@@ -11,17 +14,17 @@ int ProblemLists::maxArea(vector<int>& vHeight)
 	int right = vHeight.size() - 1;
 	while (left < right) {
 		int height = min(vHeight.at(left), vHeight.at(right));
-        int width = right - left;
-        int currwater = height * width;
+		int width = right - left;
+		int currwater = height * width;
 
-        maxwater = max(currwater, maxwater);
-        if (vHeight.at(left) < vHeight.at(right))
-        {
-            left++;
-        }
-        else {
-            right--;
-        }
+		maxwater = max(currwater, maxwater);
+		if (vHeight.at(left) < vHeight.at(right))
+		{
+			left++;
+		}
+		else {
+			right--;
+		}
 	}
 	return maxwater;
 }
@@ -30,24 +33,24 @@ int ProblemLists::maxArea(vector<int>& vHeight)
 #pragma region 14. Longest Common Prefix
 string ProblemLists::longestCommonPrefix(vector<string>& strs)
 {
-    if(strs.empty())
-        return "";
+	if (strs.empty())
+		return "";
 
-    string prefix = strs[0];
-    for (int elementNo = 1;elementNo < strs.size();elementNo++)
-    {
-        prefix = longestCommonPrefix(prefix, strs[elementNo]);
-    }
-    return prefix;
+	string prefix = strs[0];
+	for (int elementNo = 1;elementNo < strs.size();elementNo++)
+	{
+		prefix = longestCommonPrefix(prefix, strs[elementNo]);
+	}
+	return prefix;
 }
 
-string ProblemLists::longestCommonPrefix(string str1, string str2) 
+string ProblemLists::longestCommonPrefix(string str1, string str2)
 {
-    int i = 0;
-    while (i < str1.size() && i < str2.size() && str1[i] == str2[i]) {
-        i++;
-    }
-    return str1.substr(0, i);
+	int i = 0;
+	while (i < str1.size() && i < str2.size() && str1[i] == str2[i]) {
+		i++;
+	}
+	return str1.substr(0, i);
 }
 #pragma endregion
 
@@ -64,47 +67,70 @@ string ProblemLists::longestCommonPrefix(string str1, string str2)
 /// <returns></returns>
 vector<vector<int>> ProblemLists::threeSum(vector<int>& nums)
 {
-    vector<vector<int>> output;
-    sort(nums.begin(), nums.end());
-    int size = nums.size();
-    set<vector<int>> s;
-    for (int firstRecord = 0;firstRecord < size;firstRecord++)
-    {
-        int i = firstRecord;
-        int j = i + 1;
-        int k = size - 1;
-        while (j < k)
-        {
-            int sum = nums[i] + nums[j] + nums[k];
-            if (sum == 0)
-            {
-                s.insert({ nums[i], nums[j], nums[k] });
-                j++;
-                k--;
-            }
-            else if (sum < 0)
-                j++;
-            else
-                k--;
-        }
-    }
-    for (auto triplet : s)
-    {
-        output.emplace_back(triplet);
-    }
-    return output;
+	vector<vector<int>> output;
+	sort(nums.begin(), nums.end());
+	int size = nums.size();
+	set<vector<int>> s;
+	for (int firstRecord = 0;firstRecord < size;firstRecord++)
+	{
+		int i = firstRecord;
+		int j = i + 1;
+		int k = size - 1;
+		while (j < k)
+		{
+			int sum = nums[i] + nums[j] + nums[k];
+			if (sum == 0)
+			{
+				s.insert({ nums[i], nums[j], nums[k] });
+				j++;
+				k--;
+			}
+			else if (sum < 0)
+				j++;
+			else
+				k--;
+		}
+	}
+	for (auto triplet : s)
+	{
+		output.emplace_back(triplet);
+	}
+	return output;
 }
 #pragma endregion
 
 #pragma region 16. 3Sum Closest
 int ProblemLists::threeSumClosest(vector<int>& nums, int target) {
-    int sum = 0;
-    for (int i = target==0?1:0;i <nums.size();i++)
-    {
-        sum += nums[i];
-        if (nums[i] == target)
-            break;
-    }
-    return sum;
+	int sum = 0;
+	for (int i = target == 0 ? 1 : 0;i < nums.size();i++)
+	{
+		sum += nums[i];
+		if (nums[i] == target)
+			break;
+	}
+	return sum;
+}
+#pragma endregion
+
+#pragma region 17. Letter Combinations of a Phone Number
+const vector<string> phoneLetters = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+vector<string> ProblemLists::letterCombinations(string digits) {
+	vector<string> output;
+	if (digits.empty())
+		return {};
+
+	function<void(int, string)> backtrack = [&](int index, string path) {
+		if (index == digits.size()) {
+			cout << path<<",";
+			output.push_back(path);
+			return;
+		}
+
+		for (char c : M[digits[index]]) {
+			backtrack(index + 1, path + c);
+		}
+		};
+	backtrack(0, "");
+	return output;
 }
 #pragma endregion

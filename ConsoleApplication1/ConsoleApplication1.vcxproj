@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="Extra.cpp" />
     <ClCompile Include="ProblemLists.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
