@@ -4,6 +4,7 @@
 #include <set>
 #include <string>
 #include <functional>
+#include<stack>
 //#include "Extra.cpp"
 #pragma region 11. Container With Most Water
 int ProblemLists::maxArea(vector<int>& vHeight)
@@ -164,18 +165,24 @@ bool ProblemLists::isValid(string s)
 	if(s.size()<1)
 		return false;
 	unordered_map<char, char> mapping = { {'(',')'},{'{','}'},{'[',']'} };
+	stack<char> stack;
 
-	for (int i = 0;i < s.size() - 1;i = i + 2)
+	for (char bracket : s)
 	{
-		auto key = mapping.find(s[i]);
-		char value = mapping.find(s[i])->second;
-		char comparevalue = s[i + 1];
-		if (value != comparevalue)
+		if (mapping.find(bracket) != mapping.end())
 		{
-			return false;
+			stack.push(bracket);
+		}
+		else
+		{
+			if (stack.empty() || mapping[stack.top()] != bracket)
+			{
+				return false;
+			}
+			stack.pop();
 		}
 	}
-	return true;
+	return stack.empty();
 }
 #pragma endregion
 
