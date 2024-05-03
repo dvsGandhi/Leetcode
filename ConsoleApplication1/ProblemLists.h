@@ -24,6 +24,7 @@ public:
 	ListNode* removeNthFromEnd(ListNode* head, int n);
 
 	bool isValid(string s);
+	ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
 private:
 	string longestCommonPrefix(string str1, string str2);

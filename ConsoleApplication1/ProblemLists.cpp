@@ -162,7 +162,7 @@ ProblemLists::ListNode* ProblemLists::removeNthFromEnd(ListNode* head, int n) {
 #pragma region 20. Valid Parentheses
 bool ProblemLists::isValid(string s)
 {
-	if(s.size()<1)
+	if (s.size() < 1)
 		return false;
 	unordered_map<char, char> mapping = { {'(',')'},{'{','}'},{'[',']'} };
 	stack<char> stack;
@@ -186,4 +186,30 @@ bool ProblemLists::isValid(string s)
 }
 #pragma endregion
 
+#pragma region 21. Merge Two Sorted Lists
+ProblemLists::ListNode* ProblemLists::mergeTwoLists(ListNode* list1, ListNode* list2) {
+	ListNode* dummy1 = new ListNode(0);
+	dummy1->next = list1;
+	dummy1 = dummy1->next;
+	ListNode* dummy2 = new ListNode(0);
+	dummy2->next = list2;
+	dummy2 = dummy2->next;
 
+	while (dummy1 != nullptr || dummy2 != nullptr)
+	{
+		ListNode* temp1 = new ListNode(0);
+		ListNode* temp2 = new ListNode(0);
+		if (dummy1->val = dummy2->val)
+		{
+			temp1 = dummy1->next;
+			temp2 = dummy2->next;
+			dummy1->next = dummy2;
+			dummy1->next->next = temp1;
+			dummy1 = dummy1->next->next;
+			dummy2 = temp2;
+		}
+	}
+
+	return list1;
+}
+#pragma endregion

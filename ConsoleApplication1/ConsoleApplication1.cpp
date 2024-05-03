@@ -43,13 +43,20 @@ int main()
     ProblemLists::ListNode N2(2,&N3);
     ProblemLists::ListNode N1(1,&N2);
     PL.removeNthFromEnd(&N1, 2);*/
-#pragma endregion
+    #pragma endregion
 
-#pragma region PL20
-    PL.isValid("()");
-#pragma endregion
+    #pragma region PL20
+    //PL.isValid("()");
+    #pragma endregion
 
-    
+    #pragma region pL21
+    ProblemLists::ListNode N2(2);
+    ProblemLists::ListNode N1(1,&N2);
+
+    ProblemLists::ListNode M2(2);
+    ProblemLists::ListNode M1(1, &M2);
+    PL.mergeTwoLists(&N1, &M1);
+    #pragma endregion
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
