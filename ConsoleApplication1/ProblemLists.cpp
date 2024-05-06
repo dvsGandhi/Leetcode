@@ -188,49 +188,26 @@ bool ProblemLists::isValid(string s)
 
 #pragma region 21. Merge Two Sorted Lists
 ProblemLists::ListNode* ProblemLists::mergeTwoLists(ListNode* list1, ListNode* list2) {
-	ListNode* dummy1 = new ListNode(0);
-	if (list1 != nullptr)
-	{
-		dummy1->next = list1;
-		dummy1 = dummy1->next;
-	}
-	else
+	if (list1 == NULL)
 	{
 		return list2;
 	}
-	ListNode* dummy2 = new ListNode(0);
-	if (list2 != nullptr)
-	{
-		dummy2->next = list2;
-		dummy2 = dummy2->next;
-	}
-	else
+
+	if (list2 == NULL)
 	{
 		return list1;
 	}
 
-	while (dummy1 != nullptr || dummy2 != nullptr)
+	if (list1->val <= list2->val)
 	{
-		ListNode* temp1 = new ListNode(0);
-		ListNode* temp2 = new ListNode(0);
-		if (dummy1->val == dummy2->val)
-		{
-			temp1 = dummy1->next;
-			temp2 = dummy2->next;
-			dummy1->next = dummy2;
-			dummy1->next->next = temp1;
-			dummy1 = dummy1->next->next;
-			dummy2 = temp2;
-		}
-		else if (dummy1->val < dummy2->val)
-		{
-			temp1 = dummy1->next;
-			temp2 = dummy2->next;
-			dummy1->next = dummy2;
-			dummy1->next->next = temp1;
-			dummy1 = dummy1->next->next;
-			dummy2 = temp2;
-		}
+		list1->next = mergeTwoLists(list1->next, list2);
+		return list1;
+	}
+	// we will call recursive l1 whole list and l2 -> next
+	else
+	{
+		list2->next = mergeTwoLists(list1, list2->next);
+		return list2;
 	}
 	return list1;
 }
