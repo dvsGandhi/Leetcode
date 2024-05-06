@@ -50,11 +50,9 @@ int main()
     #pragma endregion
 
     #pragma region pL21
-    ProblemLists::ListNode N2(2);
-    ProblemLists::ListNode N1(1,&N2);
+    ProblemLists::ListNode N1(2);
 
-    ProblemLists::ListNode M2(2);
-    ProblemLists::ListNode M1(1, &M2);
+    ProblemLists::ListNode M1(1);
     PL.mergeTwoLists(&N1, &M1);
     #pragma endregion
 }
